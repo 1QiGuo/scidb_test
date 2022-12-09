@@ -17,7 +17,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   router: {
-    base: '/scread',
+    base: '/SCIdb',
     linkActiveClass: 'active-link'
   },
   publicRuntimeConfig: {

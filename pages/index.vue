@@ -4,11 +4,10 @@
       <p class="display-3 font-weight-regular" align-center>SCIdb</p>
       <v-flex xs="12" md="6" lg="12">
         <p class="display-1">
-          A Single-cell RNA-Seq database for Alzheimer's Disease
+          A single-cell and spatial RNA-seq database for Spinal cord injury
         </p>
       </v-flex>
     </v-layout>
-
     <client-only>
       <v-row>
         <v-col ref="pie" xs="6" md="6" lg="3">
@@ -52,7 +51,7 @@
         >
           <v-card-title>
             <p class="title">
-              scREAD covers {{ totalDatasets }} datasets from
+              SCIdb covers {{ totalDatasets }} datasets from
               {{ totalStudy }} studies, {{ totalBrainRegions }} brain regions,
               {{ totalCells }}
               cells.
@@ -229,7 +228,7 @@
                     :items="browseItems.region"
                     item-text="value"
                     item-value="value"
-                    label="Brain region"
+                    label="Spinal cord region"
                     return-object
                     outlined
                   ></v-select>
@@ -327,7 +326,7 @@ export default {
       computedDialogData: [],
       headers: [
         {
-          text: 'scREAD data ID',
+          text: 'SCIdb data ID',
           align: 'start',
           sortable: false,
           value: 'data_id'
@@ -368,7 +367,7 @@ export default {
       },
       pieData1: [
         {
-          values: [26, 47],
+          values: [0, 11],
           labels: ['Human', 'Mouse'],
           type: 'pie'
         }
@@ -399,11 +398,11 @@ export default {
       },
       pieData2: [
         {
-          values: [9, 20, 14, 30],
+          values: [0, 0, 3, 8],
           labels: [
-            'Human-control',
+            'Human-health',
             'Human-disease',
-            'Mouse-control',
+            'Mouse-health',
             'Mouse-disease'
           ],
           type: 'pie'
@@ -435,19 +434,8 @@ export default {
       },
       pieData3: [
         {
-          values: [6, 14, 3, 6, 13, 2, 5, 24, 4, 4],
-          labels: [
-            'Human_Entorhinal Cortex',
-            'Human_Prefrontal cortex',
-            'Human_Superior frontal gyrus',
-            'Human_Superior parietal lobe',
-            'Mouse_Cortex',
-            'Mouse_Cerebellum',
-            'Mouse_Cerebral cortex',
-            'Mouse_Hippocampus',
-            'Mouse_Prefrontal cortex',
-            'Mouse_Subventricular zone'
-          ],
+          values: [11],
+          labels: ['Mouse_Spinal cord'],
           type: 'pie'
         }
       ],
@@ -477,8 +465,14 @@ export default {
       },
       pieData4: [
         {
-          values: [17, 9, 29, 18],
-          labels: ['Human-male', 'Human-female', 'Mouse-male', 'Mouse-female'],
+          values: [0, 0, 0, 6, 5],
+          labels: [
+            'Human-male',
+            'Human-female',
+            'Mouse-male',
+            'Mouse-female',
+            'Unknown'
+          ],
           type: 'pie'
         }
       ],
@@ -532,7 +526,7 @@ export default {
       selectDatasetDialogData: (state) => state.ad.SelectDatasetDialogData
     }),
     bannerMessage() {
-      return `scREAD main server is currently in maintenance and you are visiting scREAD's alternative server. Please let us know for any issues or suggestions via qin.ma@osumc.edu.`
+      return `SCIdb main server is currently in maintenance and you are visiting scREAD's alternative server. Please let us know for any issues or suggestions via qin.ma@osumc.edu.`
     },
     currentBrowseItems() {
       return this.browseItems.species
@@ -626,8 +620,8 @@ export default {
       title: 'Home',
       meta: [
         {
-          hid: 'scREAD homepage',
-          name: 'scREAD home page',
+          hid: 'SCIdb homepage',
+          name: 'SCIdb home page',
           content: `Alzheimers disease single-cell RNA-seq database, 
             Alzheimers disease AD single-cell datasets database analysis workflow pipeline,
             Search gene expression, DEG, , Differential expression and Gene set enrichment analysis,
