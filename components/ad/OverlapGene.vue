@@ -25,13 +25,12 @@
               >
             </template>
             <span
-              >Suppose we have AD vs control comparisons from a cell type of
-              interest in a specific brain region. For each comparison, we
-              select top t DEGs based on the ranked log FC. We define an
-              "overlapping gene" as the gene that appears at least n times in m
-              comparisons. The Species, brain regions, minimal number of
-              comparisons, number of top DEGs are the parameters set by the
-              users.</span
+              >Suppose we have SCI vs control comparisons from a cell type of
+              interest in a specific region. For each comparison, we select top
+              t DEGs based on the ranked log FC. We define an "overlapping gene"
+              as the gene that appears at least n times in m comparisons. The
+              Species, regions, minimal number of comparisons, number of top
+              DEGs are the parameters set by the users.</span
             >
           </v-tooltip>
         </p>
@@ -147,19 +146,8 @@ export default {
       top: 100,
       direction: 'up',
       browseItems: {
-        species: ['Human', 'Mouse'],
-        regions: [
-          'Cerebellum',
-          'Cerebral cortex',
-          'Cortex',
-          'Cortex and hippocampus',
-          'Entorhinal Cortex',
-          'Hippocampus',
-          'Prefrontal cortex',
-          'Subventricular zone and hippocampus',
-          'Superior frontal gyrus (BA8)',
-          'Superior parietal lobe'
-        ]
+        species: ['Human', 'Mice'],
+        regions: ['spinal cord']
       },
       headers: [
         { text: 'Cell type', value: 'cluster' },

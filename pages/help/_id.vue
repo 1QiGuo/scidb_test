@@ -8,12 +8,13 @@
       <div v-html="post"></div>
       <toc :content="navContent"></toc>
       <no-ssr placeholder="Loading...">
+        <!-- 
         <div v-show="dataId === 'contact'" style="width:100%;">
           <a href="https://clustrmaps.com/site/1ba7j" title="Visit tracker"
             ><img
               src="//www.clustrmaps.com/map_v2.png?d=lo_dyJKzzEyHLmqSLO7k38JNTEzZg7BQaNQuc3EyqgM&cl=ffffff"
           /></a>
-        </div>
+        </div>-->
       </no-ssr>
       <Fab></Fab>
     </v-container>

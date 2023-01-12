@@ -292,17 +292,17 @@ export default {
         { text: 'Description', value: 'desc' }
       ],
       searchDefault: {
-        species: ['Human', 'Mouse'],
+        species: ['Human', 'Mice'],
         condition: ['Control', 'Disease'],
         region: ['spinal cord'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',
-          'Microglia',
+          'B cells',
           'Endothelial cells',
+          'Ependymal cells',
+          'Ependymal cells',
           'Excitatory neurons',
-          'Inhibitory neurons',
-          'Oligodendrocytes',
           'Oligodendrocyte precursor cells',
           'Pericytes',
           'NK cells'
