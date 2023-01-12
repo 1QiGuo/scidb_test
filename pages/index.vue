@@ -52,7 +52,7 @@
           <v-card-title>
             <p class="title">
               SCIdb covers {{ totalDatasets }} datasets from
-              {{ totalStudy }} studies, {{ totalBrainRegions }} brain regions,
+              {{ totalStudy }} studies, {{ totalBrainRegions }} regions,
               {{ totalCells }}
               cells.
             </p>
@@ -150,7 +150,7 @@
                   }}</span>
                 </p>
                 <p class="my-2">
-                  <span class="text--secondary">Braak stage: </span>
+                  <span class="text--secondary">SCI stage: </span>
                   <span class="text--primary">{{
                     computedDialogData.stage
                   }}</span>
@@ -322,7 +322,7 @@ export default {
     return {
       dialog: false,
       selectDatasetDialog: false,
-      totalStudy: '16',
+      totalStudy: '2',
       computedDialogData: [],
       headers: [
         {
@@ -335,7 +335,7 @@ export default {
         { text: 'Gender', value: 'gender' },
         { text: 'Condition', value: 'condition' },
         { text: 'Region', value: 'region' },
-        { text: 'Braak stage', value: 'stage' },
+        { text: 'SCI stage', value: 'stage' },
         { text: 'Age', value: 'age' },
         { text: 'Mice model', value: 'mice_model' },
         { text: 'GEO/synapse ID', value: 'public_id' },
@@ -348,27 +348,15 @@ export default {
         gender: 'All'
       },
       browseItems: {
-        species: ['All', 'Human', 'Mouse'],
-        condition: ['All', 'Control', 'Disease'],
-        region: [
-          'All',
-          'Cerebellum',
-          'Cerebral cortex',
-          'Cortex',
-          'Cortex and hippocampus',
-          'Entorhinal Cortex',
-          'Hippocampus',
-          'Prefrontal cortex',
-          'Subventricular zone and hippocampus',
-          'Superior frontal gyrus (BA8)',
-          'Superior parietal lobe'
-        ],
+        species: ['All', 'Human', 'Mice'],
+        condition: ['All', 'Healthy', 'Disease'],
+        region: ['All', 'spinal cord'],
         gender: ['All', 'Female', 'Male']
       },
       pieData1: [
         {
           values: [0, 11],
-          labels: ['Human', 'Mouse'],
+          labels: ['Human', 'Mice'],
           type: 'pie'
         }
       ],
@@ -402,8 +390,8 @@ export default {
           labels: [
             'Human-health',
             'Human-disease',
-            'Mouse-health',
-            'Mouse-disease'
+            'Mice-health',
+            'Mice-disease'
           ],
           type: 'pie'
         }
@@ -435,7 +423,7 @@ export default {
       pieData3: [
         {
           values: [11],
-          labels: ['Mouse_Spinal cord'],
+          labels: ['Mice_Spinal cord'],
           type: 'pie'
         }
       ],
@@ -469,8 +457,8 @@ export default {
           labels: [
             'Human-male',
             'Human-female',
-            'Mouse-male',
-            'Mouse-female',
+            'Mice-male',
+            'Mice-female',
             'Unknown'
           ],
           type: 'pie'
@@ -526,7 +514,7 @@ export default {
       selectDatasetDialogData: (state) => state.ad.SelectDatasetDialogData
     }),
     bannerMessage() {
-      return `SCIdb main server is currently in maintenance and you are visiting scREAD's alternative server. Please let us know for any issues or suggestions via qin.ma@osumc.edu.`
+      return `SCIdb main server is currently in maintenance and you are visiting SCIdb's alternative server. Please let us know for any issues or suggestions via qin.ma@osumc.edu.`
     },
     currentBrowseItems() {
       return this.browseItems.species

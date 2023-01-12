@@ -8,7 +8,7 @@ SCIdb is a free resource database, we welcome all kinds of feedback. We envisage
 
 Qi Guo, Cankun Wang, Phillip G Popovich, Qin Ma
 
-If you have any questions, suggestions, or found a new SCI paper generated scRNA-seq datasets, please let us know through [google form](https://docs.google.com/forms/d/e/1FAIpQLSereTkpOfJ4LJLe9Ke5dZq78SnX3D7qXjQWY0ofDut0kIfDPg/viewform), or email: [Qi.Guo@osumc.edu](guo40@osumc.edu).
+If you have any questions, suggestions, or found a new SCI paper generated scRNA-seq datasets, please let us know through [google form](https://forms.gle/1pbELrd9Gu5wcYAE6), or email: [Qi.Guo@osumc.edu](guo40@osumc.edu).
 
 More web servers developed by [BMBL](https://u.osu.edu/bmbl/) can be found [here](https://u.osu.edu/bmbl/highlights/webservers/).
 

@@ -4,7 +4,7 @@
     <v-progress-circular
       width="6"
       color="primary"
-      style="color: #6A4C9C; width: 80px; height: 80px;"
+      style="color: #12a182; width: 80px; height: 80px;"
       indeterminate
     ></v-progress-circular>
   </div>

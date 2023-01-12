@@ -18,7 +18,7 @@
 
           <v-card-text>
             <p class="my-2">
-              <span class="text--secondary">scREAD Data ID: </span>
+              <span class="text--secondary">SCIdb Data ID: </span>
               <span class="text--primary">{{ dataset[0].data_id }}</span>
             </p>
             <p class="my-2">
@@ -34,7 +34,7 @@
               <span class="text--primary">{{ dataset[0].condition }}</span>
             </p>
             <p class="my-2">
-              <span class="text--secondary">Braak stage: </span>
+              <span class="text--secondary">SCI stage: </span>
               <span class="text--primary">{{ dataset[0].stage }}</span>
             </p>
             <p class="my-2">
@@ -61,7 +61,7 @@
               <v-divider class="my-2 py-2"></v-divider>
               <v-card-text>
                 <p class="my-2">
-                  <span class="text--secondary">scREAD Data ID: </span>
+                  <span class="text--secondary">SCIdb Data ID: </span>
                   <span class="text--primary">{{
                     computedDialogData.data_id
                   }}</span>
@@ -85,7 +85,7 @@
                   }}</span>
                 </p>
                 <p class="my-2">
-                  <span class="text--secondary">Braak stage: </span>
+                  <span class="text--secondary">SCI stage: </span>
                   <span class="text--primary">{{
                     computedDialogData.stage
                   }}</span>
@@ -142,7 +142,7 @@
               </p>
               <p class="my-2">
                 <span class="text--secondary"
-                  >Number of cells in scREAD after filtering:
+                  >Number of cells in SCIdb after filtering:
                 </span>
                 <span class="text--primary">{{ dataset[0].n_cell }}</span>
               </p>
@@ -252,14 +252,14 @@ export default {
       search: '',
       headers: [
         {
-          text: 'scREAD data ID',
+          text: 'SCI data ID',
           align: 'start',
           sortable: false,
           value: 'data_id'
         },
         { text: 'Gender', value: 'gender' },
         { text: 'Condition', value: 'condition' },
-        { text: 'Braak stage', value: 'stage' },
+        { text: 'SCI stage', value: 'stage' },
         { text: 'Age', value: 'age' },
         { text: 'Mice model', value: 'mice_model' },
         { text: 'GEO/synapse ID', value: 'public_id' },

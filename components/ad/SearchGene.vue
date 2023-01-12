@@ -294,18 +294,7 @@ export default {
       searchDefault: {
         species: ['Human', 'Mouse'],
         condition: ['Control', 'Disease'],
-        region: [
-          'Cerebellum',
-          'Cerebral cortex',
-          'Cortex',
-          'Cortex and hippocampus',
-          'Entorhinal Cortex',
-          'Hippocampus',
-          'Prefrontal cortex',
-          'Subventricular zone and hippocampus',
-          'Superior frontal gyrus (BA8)',
-          'Superior parietal lobe'
-        ],
+        region: ['spinal cord'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',
@@ -327,18 +316,7 @@ export default {
       searchItems: {
         species: ['Human', 'Mouse'],
         condition: ['Control', 'Disease'],
-        region: [
-          'Cerebellum',
-          'Cerebral cortex',
-          'Cortex',
-          'Cortex and hippocampus',
-          'Entorhinal Cortex',
-          'Hippocampus',
-          'Prefrontal cortex',
-          'Subventricular zone and hippocampus',
-          'Superior frontal gyrus (BA8)',
-          'Superior parietal lobe'
-        ],
+        region: ['spinal cord'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',
@@ -404,32 +382,59 @@ export default {
           if (row.type === 'subcluster') {
             row.description = 'Subcluster specific'
           }
-          if (row.ct === 'exc') {
+          if (row.ct === 'Excitatory neurons') {
             row.ct = 'Excitatory neurons'
           }
-          if (row.ct === 'opc') {
-            row.ct = 'Oligodendrocyte precursor cells'
+          if (row.ct === 'Oligodendrocyte lineage') {
+            row.ct = 'Oligodendrocyte lineage'
           }
-          if (row.ct === 'inh') {
+          if (row.ct === 'Inhibitory neurons') {
             row.ct = 'Inhibitory neurons'
           }
-          if (row.ct === 'oli') {
-            row.ct = 'Oligodendrocytes'
-          }
-          if (row.ct === 'mic') {
+          if (row.ct === 'Microglia') {
             row.ct = 'Microglia'
           }
-          if (row.ct === 'ast') {
+          if (row.ct === 'Astrocytes') {
             row.ct = 'Astrocytes'
           }
-          if (row.ct === 'end') {
+          if (row.ct === 'Endothelial cells') {
             row.ct = 'Endothelial cells'
           }
-          if (row.ct === 'nk ') {
+          if (row.ct === 'NK cells') {
             row.ct = 'NK cells'
           }
-          if (row.ct === 'per') {
+          if (row.ct === 'Pericytes') {
             row.ct = 'Pericytes'
+          }
+          if (row.ct === 'Leptomeningeal cells') {
+            row.ct = 'Leptomeningeal cells'
+          }
+          if (row.ct === 'Erythroid cells') {
+            row.ct = 'Erythroid cells'
+          }
+          if (row.ct === 'Neutrophils') {
+            row.ct = 'Neutrophils'
+          }
+          if (row.ct === 'Intermediate progenitors') {
+            row.ct = 'Intermediate progenitors'
+          }
+          if (row.ct === 'B cells') {
+            row.ct = 'B cells'
+          }
+          if (row.ct === 'Ependymal cells') {
+            row.ct = 'Ependymal cells'
+          }
+          if (row.ct === 'T cells') {
+            row.ct = 'T cells'
+          }
+          if (row.ct === 'Monocytes') {
+            row.ct = 'Monocytes'
+          }
+          if (row.ct === 'Ependymal cells') {
+            row.ct = 'Ependymal cells'
+          }
+          if (row.ct === 'MDMs') {
+            row.ct = 'MDMs'
           }
 
           return row

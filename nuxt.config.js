@@ -17,17 +17,17 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   router: {
-    base: '/SCIdb',
+    base: '/scidb',
     linkActiveClass: 'active-link'
   },
   publicRuntimeConfig: {
     apiURL: process.env.API_URL
   },
 
-  // loading: { color: '#5698c3', height: '5px' },
+  // loading: { color: '#12a182', height: '5px' },
   loadingIndicator: {
     name: 'circle',
-    color: '#3B8070',
+    color: '#12a182',
     background: 'white'
   },
   loading: '@/components/utils/Loading.vue',
@@ -106,7 +106,7 @@ export default {
       // https://nipponcolors.com/
       themes: {
         light: {
-          primary: '#6A4C9C', // 桔梗紫
+          primary: '#12a182', // 桔梗紫
           secondary: '#CA7853', // 远州茶
           tertiary: '#F17C67', // 珊瑚朱
           accent: '#5698c3', // 晴蓝
