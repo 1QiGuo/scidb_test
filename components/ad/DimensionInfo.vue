@@ -398,57 +398,99 @@ export default {
         const trace1 = getTrace(
           this.dimension,
           'Astrocytes',
-          '#E64B35FF',
+          '#3283FE',
           this.pointSize
         )
         const trace2 = getTrace(
           this.dimension,
           'Endothelial cells',
-          '#00A087FF',
+          '#782AB6',
           this.pointSize
         )
         const trace3 = getTrace(
           this.dimension,
           'Excitatory neurons',
-          '#3C5488FF',
+          '#565656',
           this.pointSize
         )
         const trace4 = getTrace(
           this.dimension,
           'Inhibitory neurons',
-          '#F39B7FFF',
+          '#E2E2E2',
           this.pointSize
         )
         const trace5 = getTrace(
           this.dimension,
           'Microglia',
-          '#4DBBD5FF',
+          '#1CBE4F',
           this.pointSize
         )
 
         const trace6 = getTrace(
           this.dimension,
-          'Oligodendrocytes',
-          '#8491B499',
+          'Oligodendrocyte lineage',
+          '#C4451C',
           this.pointSize
         )
         const trace7 = getTrace(
           this.dimension,
-          'Oligodendrocyte precursor cells',
-          '#91D1C2FF',
+          'Leptomeningeal cells',
+          '#DEA0FD',
           this.pointSize
         )
 
         const trace8 = getTrace(
           this.dimension,
           'Pericytes',
-          '#7E6148FF',
+          '#FE00FA',
           this.pointSize
         )
         const trace9 = getTrace(
           this.dimension,
           'NK cells',
-          '#7E6148FE',
+          '#325A9B',
+          this.pointSize
+        )
+        const trace10 = getTrace(
+          this.dimension,
+          'Ependymal cells',
+          '#1C8356',
+          this.pointSize
+        )
+        const trace11 = getTrace(
+          this.dimension,
+          'Erythroid cells',
+          '#16FF32',
+          this.pointSize
+        )
+        const trace12 = getTrace(
+          this.dimension,
+          'MDMs',
+          '#FEAF16',
+          this.pointSize
+        )
+        const trace13 = getTrace(
+          this.dimension,
+          'T cells',
+          '#F8A19F',
+          this.pointSize
+        )
+        const trace15 = getTrace(
+          this.dimension,
+          'Neutrophils',
+          '#90AD1C',
+          this.pointSize
+        )
+        const trace16 = getTrace(
+          this.dimension,
+          'Monocytes',
+          '#F6222E',
+          this.pointSize
+        )
+        const trace17 = getTrace(
+          this.dimension,
+          'Intermediate progenitors',
+          '#F7E1A0',
           this.pointSize
         )
         return [
@@ -460,7 +502,15 @@ export default {
           trace6,
           trace7,
           trace8,
-          trace9
+          trace9,
+          trace10,
+          trace11,
+          trace12,
+          trace13,
+          trace14,
+          trace15,
+          trace16,
+          trace17
         ]
       } else {
         const sub0 = getSubclusterTrace(
