@@ -223,7 +223,7 @@ export default {
         { text: 'Log fold-change', value: 'avg_logFC' },
         { text: 'Adjusted p-value', value: 'p_val_adj' }
       ],
-      clusterCoordinatesSelect: 'All cell types',
+      clusterCoordinatesSelect: 'Microglia',
       enrich: [],
       layout: {
         autosize: true,
@@ -377,7 +377,6 @@ export default {
         }
         return array
       }
-
       function getSubclusterTrace(
         dim,
         select,
@@ -408,7 +407,7 @@ export default {
       }
 
       if (this.clusterCoordinatesSelect === 'All cell types') {
-        const colorsci = [
+        const colormajorct = [
           '#3283FE',
           '#FBE426',
           '#782AB6',
@@ -432,222 +431,61 @@ export default {
         let mainct = _.map(this.ct, 'cell_type')
         mainct = unique(mainct)
         mainct = mainct.sort()
-
         const traceAll = []
         for (let i = 0; i < mainct.length; i++) {
           const tracetemp = getTrace(
             this.dimension,
             mainct[i],
-            colorsci[i],
+            colormajorct[i],
+            this.pointSize
+          )
+          traceAll.push(tracetemp)
+        }
+        console.log(traceAll)
+        return traceAll
+      } else {
+        const colorsubct = [
+          '#E64B35B2',
+          '#4DBBD5B2',
+          '#00A087B2',
+          '#3C5488B2',
+          '#F39B7FB2',
+          '#8491B4B2',
+          '#91D1C2B2',
+          '#DC0000B2',
+          '#7E6148B2',
+          '#0c66b2'
+        ]
+        // let mainct = _.map(this.ct, 'celltype')
+        // mainct = unique(mainct)
+        // mainct = mainct.sort() // how to define a group of subcluster
+
+        // v1
+        // let subct = _.map(this.ct, 'subcluster')
+
+        // v2
+        const subct = this.ct
+          .filter((x) => x.cell_type === this.clusterCoordinatesSelect)
+          .filter((x) => x.subcluster !== 'all')
+          .map((x) => x.subcluster)
+          .sort()
+        // subct.shift()
+        console.log(subct)
+        //  subct = unique(subct)
+        //  subct.shift()
+
+        const traceAll = []
+        for (let i = 0; i < subct.length; i++) {
+          const tracetemp = getSubclusterTrace(
+            this.dimension,
+            this.clusterCoordinatesSelect,
+            subct[i],
+            colorsubct[i],
             this.pointSize
           )
           traceAll.push(tracetemp)
         }
         return traceAll
-      } else {
-        const sub0 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '0',
-          '#E64B35FF',
-          this.pointSize
-        )
-        const sub1 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '1',
-          '#4DBBD5FF',
-          this.pointSize
-        )
-        const sub2 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '2',
-          '#00A087FF',
-          this.pointSize
-        )
-        const sub3 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '3',
-          '#3C5488FF',
-          this.pointSize
-        )
-        const sub4 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '4',
-          '#F39B7FFF',
-          this.pointSize
-        )
-        const sub5 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '5',
-          '#8491B499',
-          this.pointSize
-        )
-        const sub6 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '6',
-          '#91D1C2FF',
-          this.pointSize
-        )
-        const sub7 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '7',
-          '#7E6148FF',
-          this.pointSize
-        )
-        const sub8 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '8',
-          '#631879FF',
-          this.pointSize
-        )
-        const sub9 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '9',
-          '#3C5488FF',
-          this.pointSize
-        )
-        const sub10 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '10',
-          '#EE0000FF',
-          this.pointSize
-        )
-        const sub11 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '11',
-          '#008B45FF',
-          this.pointSize
-        )
-        const sub12 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '12',
-          '#008280FF',
-          this.pointSize
-        )
-        const sub13 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '13',
-          '#BB0021FF',
-          this.pointSize
-        )
-        const sub14 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '14',
-          '#5F559BFF',
-          this.pointSize
-        )
-        const sub15 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '15',
-          '#A20056FF',
-          this.pointSize
-        )
-        const sub16 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '16',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub17 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '17',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub18 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '18',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub19 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '19',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub20 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '20',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub21 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '21',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub22 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '22',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub23 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '23',
-          '#808180FF',
-          this.pointSize
-        )
-        const sub24 = getSubclusterTrace(
-          this.dimension,
-          this.clusterCoordinatesSelect,
-          '24',
-          '#808180FF',
-          this.pointSize
-        )
-        const result = [
-          sub0,
-          sub1,
-          sub2,
-          sub3,
-          sub4,
-          sub5,
-          sub6,
-          sub7,
-          sub8,
-          sub9,
-          sub10,
-          sub11,
-          sub12,
-          sub13,
-          sub14,
-          sub15,
-          sub16,
-          sub17,
-          sub18,
-          sub19,
-          sub20,
-          sub21,
-          sub22,
-          sub23,
-          sub24
-        ]
-        return result
       }
     },
     expressionDim() {
@@ -692,11 +530,10 @@ export default {
       await this.$store.dispatch('ad/fetchDimension', params)
     },
     async updateExpression() {
-      this.gene &&
-        (await this.$store.dispatch('ad/fetchExpression', {
-          gene: this.gene,
-          id: this.dataset[0].data_id
-        }))
+      await this.$store.dispatch('ad/fetchExpression', {
+        gene: this.gene,
+        id: this.dataset[0].data_id
+      })
     }
   }
 }

@@ -196,6 +196,11 @@ export default {
               icon: 'mdi-newspaper',
               text: 'News',
               path: '/help/news'
+            },
+            {
+              icon: 'mdi-map-marker-outline',
+              text: 'Cell-type markers',
+              path: '/help/markers'
             }
           ]
         },
@@ -240,6 +245,11 @@ export default {
           icon: 'mdi-newspaper',
           text: 'News',
           path: '/help/news'
+        },
+        {
+          icon: 'mdi-map-marker-outline',
+          text: 'Cell-type markers',
+          path: '/help/markers'
         }
       ],
       v1Menu: [
@@ -268,6 +278,11 @@ export default {
           icon: 'mdi-newspaper',
           text: 'News',
           path: '/v1/help/news'
+        },
+        {
+          icon: 'mdi-map-marker-outline',
+          text: 'Cell-type markers',
+          path: '/v1/help/markers'
         },
         {
           icon: 'mdi-download',

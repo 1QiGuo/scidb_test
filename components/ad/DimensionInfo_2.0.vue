@@ -364,6 +364,19 @@ export default {
         }
         return trace
       }
+      function unique(arr) {
+        if (!Array.isArray(arr)) {
+          console.log('type error!')
+          return
+        }
+        const array = []
+        for (let i = 0; i < arr.length; i++) {
+          if (!array.includes(arr[i])) {
+            array.push(arr[i])
+          }
+        }
+        return array
+      }
 
       function getSubclusterTrace(
         dim,
@@ -395,108 +408,42 @@ export default {
       }
 
       if (this.clusterCoordinatesSelect === 'All cell types') {
-        const trace1 = getTrace(
-          this.dimension,
-          'Astrocytes',
+        const colorsci = [
           '#3283FE',
-          this.pointSize
-        )
-        const trace2 = getTrace(
-          this.dimension,
-          'B cells',
           '#FBE426',
-          this.pointSize
-        )
-        const trace3 = getTrace(
-          this.dimension,
-          'Endothelial cells',
           '#782AB6',
-          this.pointSize
-        )
-        const trace4 = getTrace(
-          this.dimension,
-          'Ependymal cells',
           '#1C8356',
-          this.pointSize
-        )
-        const trace5 = getTrace(
-          this.dimension,
-          'Erythroid cells',
           '#16FF32',
-          this.pointSize
-        )
-
-        const trace6 = getTrace(
-          this.dimension,
-          'Intermediate progenitors',
+          '#565656',
+          '#a9a9a9',
+          '#E2E2E2',
           '#C075A6',
-          this.pointSize
-        )
-        const trace7 = getTrace(
-          this.dimension,
-          'Leptomeningeal cells',
           '#DEA0FD',
-          this.pointSize
-        )
-        const trace8 = getTrace(
-          this.dimension,
-          'MDMs',
+          '#85660D',
           '#FEAF16',
-          this.pointSize
-        )
-        const trace9 = getTrace(
-          this.dimension,
-          'Microglia',
           '#1CBE4F',
-          this.pointSize
-        )
-        const trace10 = getTrace(
-          this.dimension,
-          'Monocytes',
           '#F6222E',
-          this.pointSize
-        )
-        const trace11 = getTrace(
-          this.dimension,
-          'Neutrophils',
           '#90AD1C',
-          this.pointSize
-        )
-
-        const trace12 = getTrace(
-          this.dimension,
-          'Oligodendrocyte lineage',
+          '#325A9B',
           '#C4451C',
-          this.pointSize
-        )
-        const trace13 = getTrace(
-          this.dimension,
-          'Pericytes',
           '#FE00FA',
-          this.pointSize
-        )
-        const trace14 = getTrace(
-          this.dimension,
-          'T cells',
-          '#222222',
-          this.pointSize
-        )
-        return [
-          trace1,
-          trace2,
-          trace3,
-          trace4,
-          trace5,
-          trace6,
-          trace7,
-          trace8,
-          trace9,
-          trace10,
-          trace11,
-          trace12,
-          trace13,
-          trace14
+          '#222222'
         ]
+        let mainct = _.map(this.ct, 'cell_type')
+        mainct = unique(mainct)
+        mainct = mainct.sort()
+
+        const traceAll = []
+        for (let i = 0; i < mainct.length; i++) {
+          const tracetemp = getTrace(
+            this.dimension,
+            mainct[i],
+            colorsci[i],
+            this.pointSize
+          )
+          traceAll.push(tracetemp)
+        }
+        return traceAll
       } else {
         const sub0 = getSubclusterTrace(
           this.dimension,
@@ -613,64 +560,71 @@ export default {
         const sub16 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '16',
-          '#808180FF',
+          'Homeostatic 2',
+          '#68dc25',
           this.pointSize
         )
         const sub17 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '17',
-          '#808180FF',
+          'Non-lipid phagocytosing',
+          '#EE0000FF',
           this.pointSize
         )
         const sub18 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '18',
-          '#808180FF',
+          'Antigen binding',
+          '#A20056FF',
           this.pointSize
         )
         const sub19 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '19',
-          '#808180FF',
+          'Interferon production',
+          '#9e6ea6',
           this.pointSize
         )
         const sub20 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '20',
-          '#808180FF',
+          'Homeostatic 1',
+          '#EE0000FF',
           this.pointSize
         )
         const sub21 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '21',
-          '#808180FF',
+          'Iron processing',
+          '#a66e76',
           this.pointSize
         )
         const sub22 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '22',
+          'Lipid processing 1',
           '#808180FF',
           this.pointSize
         )
         const sub23 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '23',
-          '#808180FF',
+          'Proliferating',
+          '#6ea69e',
           this.pointSize
         )
         const sub24 = getSubclusterTrace(
           this.dimension,
           this.clusterCoordinatesSelect,
-          '24',
-          '#808180FF',
+          'Lipid processing 2',
+          '#FBE426',
+          this.pointSize
+        )
+        const sub25 = getSubclusterTrace(
+          this.dimension,
+          this.clusterCoordinatesSelect,
+          'Patrolling',
+          '#008280FF',
           this.pointSize
         )
         const result = [
@@ -698,7 +652,8 @@ export default {
           sub21,
           sub22,
           sub23,
-          sub24
+          sub24,
+          sub25
         ]
         return result
       }
@@ -745,10 +700,11 @@ export default {
       await this.$store.dispatch('ad/fetchDimension', params)
     },
     async updateExpression() {
-      await this.$store.dispatch('ad/fetchExpression', {
-        gene: this.gene,
-        id: this.dataset[0].data_id
-      })
+      this.gene &&
+        (await this.$store.dispatch('ad/fetchExpression', {
+          gene: this.gene,
+          id: this.dataset[0].data_id
+        }))
     }
   }
 }

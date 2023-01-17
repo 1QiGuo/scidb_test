@@ -314,7 +314,7 @@ export default {
         ]
       },
       searchItems: {
-        species: ['Human', 'Mouse'],
+        species: ['Human', 'Mice'],
         condition: ['Control', 'Disease'],
         region: ['spinal cord'],
         gender: ['Female', 'Male'],
