@@ -146,7 +146,7 @@ export default {
       top: 100,
       direction: 'up',
       browseItems: {
-        species: ['Human', 'Mice'],
+        species: ['Human', 'Mouse'],
         regions: ['spinal cord']
       },
       headers: [

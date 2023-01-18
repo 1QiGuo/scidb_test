@@ -322,7 +322,7 @@ export default {
     return {
       dialog: false,
       selectDatasetDialog: false,
-      totalStudy: '2',
+      totalStudy: '1',
       computedDialogData: [],
       headers: [
         {
@@ -337,7 +337,7 @@ export default {
         { text: 'Region', value: 'region' },
         { text: 'SCI stage', value: 'stage' },
         { text: 'Age', value: 'age' },
-        { text: 'Mice model', value: 'mice_model' },
+        { text: 'Mouse model', value: 'mice_model' },
         { text: 'GEO/synapse ID', value: 'public_id' },
         { text: '#Cells', value: 'n_cell' }
       ],
@@ -348,15 +348,15 @@ export default {
         gender: 'All'
       },
       browseItems: {
-        species: ['All', 'Human', 'Mice'],
+        species: ['All', 'Human', 'Mouse'],
         condition: ['All', 'Healthy', 'Disease'],
-        region: ['All', 'spinal cord'],
+        region: ['All'],
         gender: ['All', 'Female', 'Male']
       },
       pieData1: [
         {
-          values: [0, 11],
-          labels: ['Human', 'Mice'],
+          values: [0, 6],
+          labels: ['Human', 'Mouse'],
           type: 'pie'
         }
       ],
@@ -386,12 +386,12 @@ export default {
       },
       pieData2: [
         {
-          values: [0, 0, 3, 8],
+          values: [0, 0, 2, 4],
           labels: [
             'Human-health',
             'Human-disease',
-            'Mice-health',
-            'Mice-disease'
+            'Mouse-health',
+            'Mouse-disease'
           ],
           type: 'pie'
         }
@@ -422,8 +422,8 @@ export default {
       },
       pieData3: [
         {
-          values: [11],
-          labels: ['Mice_Spinal cord'],
+          values: [6],
+          labels: ['Mouse_Thoracic'],
           type: 'pie'
         }
       ],
@@ -453,12 +453,12 @@ export default {
       },
       pieData4: [
         {
-          values: [0, 0, 0, 6, 5],
+          values: [0, 0, 0, 6, 0],
           labels: [
             'Human-male',
             'Human-female',
-            'Mice-male',
-            'Mice-female',
+            'Mouse-male',
+            'Mouse-female',
             'Unknown'
           ],
           type: 'pie'

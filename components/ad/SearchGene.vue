@@ -292,9 +292,9 @@ export default {
         { text: 'Description', value: 'desc' }
       ],
       searchDefault: {
-        species: ['Human', 'Mice'],
+        species: ['Human', 'Mouse'],
         condition: ['Control', 'Disease'],
-        region: ['spinal cord'],
+        region: ['T9'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',
@@ -314,9 +314,9 @@ export default {
         ]
       },
       searchItems: {
-        species: ['Human', 'Mice'],
+        species: ['Human', 'Mouse'],
         condition: ['Control', 'Disease'],
-        region: ['spinal cord'],
+        region: ['T9'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',

@@ -223,7 +223,7 @@ export default {
         { text: 'Log fold-change', value: 'avg_logFC' },
         { text: 'Adjusted p-value', value: 'p_val_adj' }
       ],
-      clusterCoordinatesSelect: 'Microglia',
+      clusterCoordinatesSelect: 'All cell types',
       enrich: [],
       layout: {
         autosize: true,
@@ -441,7 +441,7 @@ export default {
           )
           traceAll.push(tracetemp)
         }
-        console.log(traceAll)
+        // console.log(traceAll)
         return traceAll
       } else {
         const colorsubct = [
@@ -470,7 +470,7 @@ export default {
           .map((x) => x.subcluster)
           .sort()
         // subct.shift()
-        console.log(subct)
+        // console.log(subct)
         //  subct = unique(subct)
         //  subct.shift()
 

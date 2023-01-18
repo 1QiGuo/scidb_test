@@ -929,14 +929,14 @@ export default {
           type: 'cell_type_specific'
         },
         {
-          groupText: 'Disease vs control (same region)',
+          groupText: 'Disease vs control',
           hint:
             'Compare disease with control  dataset in the same species, region, gender and age.',
           bDataId: 'AD00106',
           type: 'a_vs_b'
         },
         {
-          groupText: 'Disease vs disease (same region)',
+          groupText: 'Disease vs disease',
           hint:
             'Compare two disease datasets in the same species, region, gender and age.',
           type: 'a_vs_b'
@@ -1303,8 +1303,8 @@ export default {
         }
       } else if (this.comparisonItems.includes(this.comparisonSelect)) {
         const params = {
-          bDataId: this.comparisonSelect.data_id,
-          aDataId: this.comparisonSelect.b_data_id,
+          aDataId: this.comparisonSelect.data_id,
+          bDataId: this.comparisonSelect.b_data_id,
           type: this.groupSelect.type,
           ct: this.cellTypeSelect
         }
