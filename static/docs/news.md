@@ -2,10 +2,19 @@
 
 # News
 
+## 01/18/2023
+
+### Added
+
+- Differentially expressed genes in different samples were run and uploaded to MySQL
+- Exporting SCIdb dataset in MySQL
+- Uploading dataset to server by Cankun
+
 ## 01/16/2023
 
 ### Added
 
+- Major-cell-type and sub-cell-type marker collection
 - Markers page
 
 ## 01/15/2023
