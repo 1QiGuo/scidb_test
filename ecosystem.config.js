@@ -1,9 +1,9 @@
 module.exports = {
   apps: [
     {
-      name: 'scREAD frontend',
+      name: 'SCIDB frontend',
       script: './node_modules/nuxt-start/bin/nuxt-start.js',
-      port: 9003,
+      port: 9006,
       watch: '.',
       args: 'start -H 0.0.0.0',
       max_memory_restart: '5G',
