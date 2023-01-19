@@ -147,7 +147,7 @@ export default {
       direction: 'up',
       browseItems: {
         species: ['Human', 'Mouse'],
-        regions: ['spinal cord']
+        regions: ['T9']
       },
       headers: [
         { text: 'Cell type', value: 'cluster' },

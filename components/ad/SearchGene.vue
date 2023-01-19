@@ -270,7 +270,6 @@ import _ from 'lodash'
 export default {
   name: 'SearchGene',
   components: {},
-
   data() {
     return {
       searchGene: '',
@@ -293,7 +292,7 @@ export default {
       ],
       searchDefault: {
         species: ['Human', 'Mouse'],
-        condition: ['Control', 'Disease'],
+        condition: ['Healthy', 'Disease'],
         region: ['T9'],
         gender: ['Female', 'Male'],
         cellType: [
@@ -301,11 +300,21 @@ export default {
           'B cells',
           'Endothelial cells',
           'Ependymal cells',
-          'Ependymal cells',
+          'Erythroid cells',
           'Excitatory neurons',
-          'Oligodendrocyte precursor cells',
+          'Inhibitory neurons',
+          'Intermediate progenitors',
+          'Leptomeningeal cells',
+          'Macrophages',
+          'MDMs',
+          'Microglia',
+          'Monocytes',
+          'Neutrophils',
+          'Oligodendrocyte lineage',
           'Pericytes',
-          'NK cells'
+          'T cells',
+          'Schwann',
+          'Meninges'
         ],
         comparisonType: [
           'Cell type specific',
@@ -315,19 +324,29 @@ export default {
       },
       searchItems: {
         species: ['Human', 'Mouse'],
-        condition: ['Control', 'Disease'],
+        condition: ['Healthy', 'Disease'],
         region: ['T9'],
         gender: ['Female', 'Male'],
         cellType: [
           'Astrocytes',
-          'Microglia',
+          'B cells',
           'Endothelial cells',
+          'Ependymal cells',
+          'Erythroid cells',
           'Excitatory neurons',
           'Inhibitory neurons',
-          'Oligodendrocytes',
-          'Oligodendrocyte precursor cells',
+          'Intermediate progenitors',
+          'Leptomeningeal cells',
+          'Macrophages',
+          'MDMs',
+          'Microglia',
+          'Monocytes',
+          'Neutrophils',
+          'Oligodendrocyte lineage',
           'Pericytes',
-          'NK cells'
+          'T cells',
+          'Schwann',
+          'Meninges'
         ],
         comparisonType: [
           'Cell type specific',
@@ -346,6 +365,7 @@ export default {
     filterResults() {
       const res = this.results.rows
         .map((row) => {
+          // row is each row of results
           const thisDeMeta = this.deMeta.filter(
             (meta) =>
               meta.data_id === row.b_data_id && meta.b_data_id === row.a_data_id
@@ -368,7 +388,6 @@ export default {
               b_region: region,
               b_gender: gender
             }))[0]
-          // console.log(aInfo)
           return {
             ...row,
             ...aInfo,
@@ -382,7 +401,7 @@ export default {
           if (row.type === 'subcluster') {
             row.description = 'Subcluster specific'
           }
-          if (row.ct === 'Excitatory neurons') {
+          /* if (row.ct === 'Excitatory neurons') {
             row.ct = 'Excitatory neurons'
           }
           if (row.ct === 'Oligodendrocyte lineage') {
@@ -435,7 +454,7 @@ export default {
           }
           if (row.ct === 'MDMs') {
             row.ct = 'MDMs'
-          }
+          } */
 
           return row
         })
